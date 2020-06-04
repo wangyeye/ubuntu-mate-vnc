@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an headles vnc image based on Ubuntu
 
-FROM ubuntu:20.04
+FROM wangye/ubuntu-mate
 
 
 ## Connection ports for controlling the UI:
@@ -36,11 +36,9 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 RUN $INST_SCRIPTS/install_custom_fonts.sh
 
 ### Install xvnc-server & noVNC - HTML5 based VNC viewer
-RUN $INST_SCRIPTS/tightvnc.sh
 RUN $INST_SCRIPTS/no_vnc.sh
 
 ### Install Mate Desktop
-RUN $INST_SCRIPTS/mate.sh
 ADD ./src/mate/ $HOME/
 
 ### configure startup
