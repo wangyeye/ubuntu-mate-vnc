@@ -45,7 +45,7 @@ ADD ./src/mate/ $HOME/
 
 ### configure startup
 RUN $INST_SCRIPTS/libnss_wrapper.sh
-ADD ./src/common/scripts $STARTUPDIR
+ADD ./src $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 USER 0:0
