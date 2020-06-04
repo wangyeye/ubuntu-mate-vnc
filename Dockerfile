@@ -12,11 +12,12 @@ ENV DISPLAY=:1 \
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
 ### Envrionment config
-ENV HOME=/headless \
+ENV HOME=/root \
+    USER=root
     TERM=xterm \
-    STARTUPDIR=/dockerstartup \
-    INST_SCRIPTS=/headless/install \
-    NO_VNC_HOME=/headless/noVNC \
+    STARTUPDIR=/startup \
+    INST_SCRIPTS=/root/install \
+    NO_VNC_HOME=/root/noVNC \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1440x900 \
@@ -48,5 +49,5 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 USER 0:0
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/startup/vnc_startup.sh"]
 CMD ["--wait"]
