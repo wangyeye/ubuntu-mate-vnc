@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an headles vnc image based on Ubuntu
 
-FROM wangye/ubuntu-mate
+FROM wangye/ubuntu-mate:18.04
 
 
 ## Connection ports for controlling the UI:
