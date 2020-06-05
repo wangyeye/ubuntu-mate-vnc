@@ -13,7 +13,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 
 ### Envrionment config
 ENV HOME=/root \
-    USER=root
+    USER=root \
     TERM=xterm \
     STARTUPDIR=/startup \
     INST_SCRIPTS=/root/install \
